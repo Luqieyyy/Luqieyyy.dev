@@ -4,10 +4,12 @@
  * 
  * Data roadmap ada dalam: /data/lifeRoadmap.js
  * Edit data tu untuk update roadmap
+ * Images: Letak gambar dalam /public/roadmap/ folder
  */
 
 'use client';
 import lifeRoadmap from '@/data/lifeRoadmap';
+import Image from 'next/image';
 
 export default function LifeRoadmap() {
     return (
@@ -20,7 +22,23 @@ export default function LifeRoadmap() {
                 
                 {lifeRoadmap.map((item, index) => (
                     <div key={index} className="roadmap-item">
-                        <div className="roadmap-icon">{item.icon}</div>
+                        {/* Image or Icon */}
+                        <div className="roadmap-visual">
+                            {item.image ? (
+                                <div className="roadmap-image">
+                                    <Image 
+                                        src={item.image} 
+                                        alt={item.title}
+                                        fill
+                                        sizes="400px"
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
+                            ) : (
+                                <div className="roadmap-icon">{item.icon}</div>
+                            )}
+                        </div>
+                        
                         <div className="roadmap-year">{item.year}</div>
                         <h3 className="roadmap-title">{item.title}</h3>
                         <p className="roadmap-desc">{item.description}</p>

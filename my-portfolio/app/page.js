@@ -18,7 +18,9 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/sections/HeroSection';
 import AboutIntro from '@/components/sections/AboutIntro';
 import LifeRoadmap from '@/components/sections/LifeRoadmap';
+import EducationSection from '@/components/sections/EducationSection';
 import SkillsSection from '@/components/sections/SkillsSection';
+import CertificationsSection from '@/components/sections/CertificationsSection';
 import ProjectsPreview from '@/components/sections/ProjectsPreview';
 import ContactCTA from '@/components/sections/ContactCTA';
 
@@ -65,7 +67,9 @@ export default function Home() {
             <HeroSection />
             <AboutIntro />
             <LifeRoadmap />
+            <EducationSection />
             <SkillsSection />
+            <CertificationsSection />
             <ProjectsPreview />
             <ContactCTA />
         </div>

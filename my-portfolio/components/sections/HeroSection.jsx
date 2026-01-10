@@ -18,17 +18,7 @@ export default function HeroSection() {
         <section className="hero-section">
             <div className="hero-bg-gradient"></div>
             <div className="hero-content">
-                {/* Profile Photo */}
-                <div className="hero-image-container">
-                    <Image 
-                        src="/luqman.jpg" 
-                        alt="Muhammad Luqman Bin Bahrin"
-                        width={200}
-                        height={200}
-                        className="hero-image"
-                        priority
-                    />
-                </div>
+
 
                 <span className="hero-greeting">Hello, I'm</span>
                 <h1 className="hero-title">LuqieyyyDev</h1>

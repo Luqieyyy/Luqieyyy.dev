@@ -34,7 +34,7 @@ export default function HeroSection() {
                 <h1 className="hero-title">LuqieyyyDev</h1>
                 <p className="hero-subtitle">
                     Muhammad Luqman Bin Bahrin<br />
-                    <span className="typing-text">Software Developer • Final Year Student • Problem Solver</span>
+                    <span className="typing-text">Software Developer • Final Year Student • Problem Solver </span>
                 </p>
                 <Link href="/projects" className="hero-cta">
                     <span>View My Work</span>

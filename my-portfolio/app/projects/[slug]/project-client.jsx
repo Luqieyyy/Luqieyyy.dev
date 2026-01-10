@@ -114,48 +114,121 @@ export default function ProjectClient({ project, nextProject, prevProject }) {
     }, [project]);
 
 return (
-        <div className="project-page" ref={mainRef}> {/* Attach the ref here */}
-            {/* ... Existing Project Navigation ... */}
+        <div className="project-page" ref={mainRef}>
+            {/* Fixed Navigation Bar */}
             <div className="project-nav">
-                <div className= "link">
-                    <span>&#8592;</span>
-                    <Link href= {`/projects/${prevProject.slug}`}>{prevProject.title}</Link>
-                </div>
+                <Link href="/projects" className="link back-link">
+                    <span>←</span>
+                    <span>All Projects</span>
+                </Link>
 
-                <div className= "project-page-scroll-progress"> 
+                <div className="project-page-scroll-progress"> 
                     <p>{project.title}</p>
                     <div className="project-page-scroll-progress-bar"></div>
                 </div>
 
-                <div className="link">
-                    <Link href= {`/projects/${nextProject.slug}`}>Next</Link>
-                    <span>&#8594;&nbsp;</span>
-                </div>
+                <Link href={`/projects/${nextProject.slug}`} className="link next-link">
+                    <span>Next</span>
+                    <span>→</span>
+                </Link>
             </div>
             
-            <div className = "project-hero"></div>
-            <h1>{project.title}</h1>
-            <p>{project.description}</p>
-            
-            {/* The wrapper div for images helps GSAP target them */}
-            <div className = "project-images"> 
-                {project.images.map((image, index) => (
-                    // Give the image container a class for GSAP targeting
-                    <div className = "project-img" key={index}> 
-                        <img src={image} alt="" />
+            {/* Hero Section */}
+            <div className="project-hero-section">
+                <div className="project-hero-content">
+                    <span className="project-category">{project.category}</span>
+                    <h1 className="project-hero-title">{project.title}</h1>
+                    <p className="project-hero-description">{project.longDescription || project.description}</p>
+                    
+                    {/* Project Meta Info */}
+                    <div className="project-meta">
+                        {project.year && (
+                            <div className="meta-item">
+                                <span className="meta-label">Year</span>
+                                <span className="meta-value">{project.year}</span>
+                            </div>
+                        )}
+                        {project.client && (
+                            <div className="meta-item">
+                                <span className="meta-label">Client</span>
+                                <span className="meta-value">{project.client}</span>
+                            </div>
+                        )}
+                        {project.category && (
+                            <div className="meta-item">
+                                <span className="meta-label">Category</span>
+                                <span className="meta-value">{project.category}</span>
+                            </div>
+                        )}
                     </div>
-                ))}
+
+                    {/* Tech Stack */}
+                    {project.tech && project.tech.length > 0 && (
+                        <div className="project-tech-stack">
+                            <h3>Technologies Used</h3>
+                            <div className="tech-tags">
+                                {project.tech.map((tech, index) => (
+                                    <span key={index} className="tech-tag">{tech}</span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Action Buttons */}
+                    <div className="project-actions">
+                        {project.link && (
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-btn primary">
+                                <span>View Live</span>
+                                <span>↗</span>
+                            </a>
+                        )}
+                        {project.github && (
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-btn secondary">
+                                <span>GitHub</span>
+                                <span>→</span>
+                            </a>
+                        )}
+                    </div>
+                </div>
             </div>
 
-            <div className = "project-footer">
-                <div className= "project-footer-copy">
-                    <p>Next Project</p>
-                    {/* Wrap h1 in a Link for better UX, or just keep it as h1 */}
-                    <Link href= {`/projects/${nextProject.slug}`}>
-                        <h1>{nextProject.title}</h1>
+            {/* Key Features Section */}
+            {project.features && project.features.length > 0 && (
+                <div className="project-features-section">
+                    <h2>Key Features</h2>
+                    <div className="features-grid">
+                        {project.features.map((feature, index) => (
+                            <div key={index} className="feature-card">
+                                <span className="feature-number">{String(index + 1).padStart(2, '0')}</span>
+                                <p>{feature}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Project Images Gallery */}
+            <div className="project-images-section">
+                <h2>Project Gallery</h2>
+                <div className="project-images"> 
+                    {project.images.map((image, index) => (
+                        <div className="project-img" key={index}> 
+                            <img src={image} alt={`${project.title} screenshot ${index + 1}`} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Next Project Footer */}
+            <div className="project-footer">
+                <div className="project-footer-content">
+                    <p className="footer-label">Next Project</p>
+                    <Link href={`/projects/${nextProject.slug}`} className="footer-next-project">
+                        <h2>{nextProject.title}</h2>
+                        <p>{nextProject.description}</p>
+                        <span className="footer-arrow">→</span>
                     </Link>
                 </div>
-                {/* Removed the progress bars from footer as they seem unused/redundant */}
             </div>
         </div>
     );

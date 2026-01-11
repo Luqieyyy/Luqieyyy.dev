@@ -15,7 +15,7 @@ export default function Projects(){
                     <span>←</span>
                     <span>Back to Home</span>
                 </Link>
-                <h1 className="projects-page-title">Featured Projects</h1>
+                <h1 className="projects-page-title">My Projects</h1>
                 <p className="projects-page-subtitle">
                     Explore my latest work in full-stack development, IoT systems, and innovative solutions
                 </p>

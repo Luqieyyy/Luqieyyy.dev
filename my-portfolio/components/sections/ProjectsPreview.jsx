@@ -13,7 +13,7 @@ import projects from '@/projects';
 export default function ProjectsPreview() {
     return (
         <section className="projects-preview">
-            <h2 className="section-title">Featured Work</h2>
+            <h2 className="section-title">My Project</h2>
             <div className="project-grid">
                 {projects.map((project) => (
                     <Link

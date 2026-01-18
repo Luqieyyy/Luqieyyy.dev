@@ -77,7 +77,7 @@ const projects = [
         slug: 'project-three',
         title: 'Taska-Attendance-System-integrated-with-NFC',
         description: 'The Taska Attendance System Integrated with NFC is an automated child check-in and check-out solution that leverages Near Field Communication (NFC) technology to streamline attendance tracking in childcare centres (taska). Each child is assigned a unique NFC tag or card, which parents or guardians simply tap on an NFC reader when dropping off or picking up their child. This instantaneous tap interaction eliminates the need for manual signatures or cumbersome registration forms.',
-        longDescription: 'Spearheaded the digital content execution for the Daebak Ramyeon Launch Campaign on TikTok. Created engaging short-form video content that drove brand awareness and product launch success.',
+        longDescription: '',
         category: 'IoT ',
         tech: ['NFC', 'Embedded Systems', 'IoT', 'JavaFX', 'MySQL', 'Arduino UNO R3'],
         features: [

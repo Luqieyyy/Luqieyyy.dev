@@ -130,32 +130,19 @@ export function setupHorizontalScroll() {
  * Setup Skills Section Animations
  */
 export function setupSkillsAnimations() {
-    // Slide from left
-    gsap.from('.skill-left', {
-        x: -200,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.2,
-        scrollTrigger: {
-            trigger: '.skills-section',
-            start: 'top 70%',
-            toggleActions: 'play none none none',
-        }
-    });
-
-    // Slide from right
-    gsap.from('.skill-right', {
-        x: 200,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.2,
-        scrollTrigger: {
-            trigger: '.skills-section',
-            start: 'top 70%',
-            toggleActions: 'play none none none',
-        }
+    gsap.utils.toArray('.skill-card').forEach((card, i) => {
+        const direction = i % 2 === 0 ? -100 : 100;
+        gsap.from(card, {
+            opacity: 0,
+            x: direction,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none none',
+            }
+        });
     });
 }
 

@@ -18,10 +18,8 @@ export default function SkillsSection() {
             <div className="skills-grid">
                 {skills.map((skill, index) => {
                     // Alternating left/right animation classes
-                    const animationClass = index % 2 === 0 ? 'skill-left' : 'skill-right';
-                    
                     return (
-                        <div key={index} className={`skill-card ${animationClass}`}>
+                        <div key={index} className="skill-card">
                             <div className="skill-icon-container">
                                 {skill.image ? (
                                     <Image 

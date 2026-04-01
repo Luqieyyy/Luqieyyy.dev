@@ -560,6 +560,35 @@ img{
     margin: 0;
 }
 
+/* ===== PROJECT DEMO VIDEO ===== */
+
+.project-video-section {
+    max-width: 1000px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.project-video-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #1f2937;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.project-video-wrapper {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    background: #000;
+}
+
+.project-video {
+    width: 100%;
+    display: block;
+    max-height: 560px;
+}
+
 /* ===== PROJECT IMAGES GALLERY ===== */
 
 .project-images-section {
@@ -1375,8 +1404,9 @@ img{
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -1388,6 +1418,9 @@ img{
     border-radius: 1.5rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: calc(33.333% - 1.5rem);
+    min-width: 280px;
+    flex-shrink: 0;
 }
 
 .skill-card:hover {
@@ -1543,9 +1576,10 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.25rem;
     background: white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
 }
 
 .edu-logo {
@@ -1958,12 +1992,13 @@ img{
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
     .skill-card {
         padding: 2rem;
+        width: 100%;
+        min-width: unset;
     }
 
     .skill-image {
@@ -2311,8 +2346,8 @@ img{
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .skills-grid .skill-card {
+        width: calc(50% - 1rem);
     }
 
     .certifications-grid {

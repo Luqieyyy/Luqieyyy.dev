@@ -207,6 +207,22 @@ return (
                 </div>
             )}
 
+            {/* Project Demo Video */}
+            {project.video && (
+                <div className="project-video-section">
+                    <h2>Demo Video</h2>
+                    <div className="project-video-wrapper">
+                        <video
+                            controls
+                            playsInline
+                            className="project-video"
+                        >
+                            <source src={project.video} type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+            )}
+
             {/* Project Images Gallery */}
             <div className="project-images-section">
                 <h2>Project Gallery</h2>

@@ -23,13 +23,24 @@ const education = [
     },
     {
         school: 'Malacca Matriculation College',
-        degree: 'Matriculation (Science Stream)',
+        degree: 'Matriculation (Science Physical)',
         period: 'Jul 2022 - May 2023',
         location: 'Malacca, Malaysia',
         highlights: ['Physical Sciences', 'KAKOM Football Tournament Representative', 'Class PAL Leader'],
         logo: '/education/matrik-logo.png',
         icon: '🎓',
         color: '#7c3aed'
+    },
+    {
+        school : 'SMK SELANDAR',
+        degree : 'PURE SCIENCE',
+        period : '2017-2021',
+        location : 'SELANDAR, JASIN, MALACCA, MALAYSIA',
+        highlights : ['School Prefect', 'Taekwondo Athlete', 'Robotic Club President', 'Football Team'],
+        logo: '/education/smkselandar-logo1.png',
+        logoScale: 1.2,
+        icon: '🎓',
+        color: '#059669'
     }
 ];
 
@@ -42,12 +53,13 @@ export default function EducationSection() {
                     <div key={index} className="education-card">
                         <div className="edu-logo-container" style={{ backgroundColor: `${edu.color}10` }}>
                             {edu.logo ? (
-                                <Image 
-                                    src={edu.logo} 
+                                <Image
+                                    src={edu.logo}
                                     alt={`${edu.school} logo`}
                                     width={100}
                                     height={100}
                                     className="edu-logo"
+                                    style={{ objectFit: 'contain', transform: `scale(${edu.logoScale || 1})` }}
                                 />
                             ) : (
                                 <span style={{ fontSize: '3rem' }}>{edu.icon}</span>

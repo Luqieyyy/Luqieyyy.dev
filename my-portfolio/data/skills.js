@@ -33,6 +33,12 @@ const skills = [
         image: '/skills/uiux-icon.png',
         title: 'UI/UX Design',
         description: 'Designing user-centered experiences with Figma and modern design principles'
+    },
+    {
+        icon: '🔌',
+        image: '/skills/iot-icon.png',
+        title: 'IoT Development',
+        description: 'Building smart IoT systems with ESP32, sensors, and real-time cloud integration'
     }
 ];
 

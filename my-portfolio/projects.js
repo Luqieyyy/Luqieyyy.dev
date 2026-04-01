@@ -196,12 +196,11 @@ const projects = [
         client: 'Personal Research Project',
         link: '',
         github: '',
+        video: '/project-6.mp4',
         images: [
             "/project-6-1.jpg",
             "/project-6-2.jpg",
             "/project-6-3.jpg",
-            "/project-6-4.jpg",
-            "/project-6-5.jpg",
         ],
     },
     {

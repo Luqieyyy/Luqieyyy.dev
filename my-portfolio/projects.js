@@ -257,8 +257,8 @@ const projects = [
             "/project-8-1.jpg",
             "/project-8-2.jpg",
             "/project-8-3.jpg",
-            "/project-8-4.jpg",
-            "/project-8-5.jpg",
+            "/project-8-4.mp4",
+            "/project-8-5.mp4",
         ],
     },
 ];

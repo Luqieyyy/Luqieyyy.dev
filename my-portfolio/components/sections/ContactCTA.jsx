@@ -9,6 +9,7 @@
  */
 
 'use client';
+import Image from 'next/image';
 
 export default function ContactCTA() {
     return (
@@ -25,14 +26,14 @@ export default function ContactCTA() {
                     rel="noopener noreferrer"
                     className="cta-social-btn"
                 >
-                    <span className="cta-social-icon">in</span>
+                    <Image src="/connect/linkedln.jpg" alt="LinkedIn" width={24} height={24} className="cta-social-img" />
                     LinkedIn
                 </a>
                 <a
                     href="mailto:luqmanbahrin2004@gmail.com"
                     className="cta-social-btn"
                 >
-                    <span className="cta-social-icon">✉</span>
+                    <Image src="/connect/mail.jpg" alt="Email" width={24} height={24} className="cta-social-img" />
                     Email
                 </a>
                 <a
@@ -41,7 +42,7 @@ export default function ContactCTA() {
                     rel="noopener noreferrer"
                     className="cta-social-btn"
                 >
-                    <span className="cta-social-icon">⌥</span>
+                    <Image src="/connect/github.jpg" alt="GitHub" width={24} height={24} className="cta-social-img" />
                     GitHub
                 </a>
                 <a
@@ -50,7 +51,7 @@ export default function ContactCTA() {
                     rel="noopener noreferrer"
                     className="cta-social-btn"
                 >
-                    <span className="cta-social-icon">📄</span>
+                    <Image src="/connect/resume.jpg" alt="Resume" width={24} height={24} className="cta-social-img" />
                     Resume
                 </a>
             </div>

@@ -231,10 +231,17 @@ return (
                         const src = typeof image === 'string' ? image : image.src;
                         const caption = typeof image === 'object' ? image.caption : null;
                         const description = typeof image === 'object' ? image.description : null;
+                        const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
                         return (
                             <div className="project-img-wrapper" key={index}>
                                 <div className="project-img">
-                                    <img src={src} alt={caption || `${project.title} screenshot ${index + 1}`} />
+                                    {isVideo ? (
+                                        <video controls playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+                                            <source src={src} type="video/mp4" />
+                                        </video>
+                                    ) : (
+                                        <img src={src} alt={caption || `${project.title} screenshot ${index + 1}`} />
+                                    )}
                                 </div>
                                 {(caption || description) && (
                                     <div className="project-img-caption">

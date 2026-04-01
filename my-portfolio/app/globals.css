@@ -1518,6 +1518,14 @@ img{
     transform: translateY(-2px);
 }
 
+.cta-social-img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
 .cta-social-icon {
     font-size: 0.95rem;
     color: #e8944a;

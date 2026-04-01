@@ -5,6 +5,8 @@
  * Logos: Letak logo dalam /public/certifications/ folder
  */
 
+import { title } from "process";
+
 const certifications = [
     {
         title: 'Gemini Certified University Student',
@@ -93,6 +95,22 @@ const certifications = [
         icon: '🤖',
         logo: '/certifications/sasbadi-logo.png',
         color: '#34495E'
+    },
+    {
+        title: 'Machine Learning using SAS VIYA',
+        issuer: 'SAS',
+        date: 'March 2026',
+        icon: '🤖',
+        logo: '/certifications/sas-logo.png',
+        color: '#0066CC'
+    },
+    {
+        title : 'Gemini Certified University Student',
+        issuer : 'Google for Developers',
+        date : 'December 2025', 
+        icon : '🎓',
+        logo : '/certifications/google-logo.png',
+        color : '#4285F4'
     }
 ];
 

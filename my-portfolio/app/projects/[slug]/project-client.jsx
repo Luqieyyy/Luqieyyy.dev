@@ -33,7 +33,7 @@ export default function ProjectClient({ project, nextProject, prevProject }) {
 
             // --- B. Project Images Animation (Image Zoom Effect) ---
             // Loop through each image container
-            gsap.utils.toArray(".project-img").forEach((container, i) => {
+            gsap.utils.toArray(".project-img").forEach((container) => {
                 const img = container.querySelector('img');
 
                 // Animate the image itself (e.g., scale up a bit)
@@ -210,12 +210,25 @@ return (
             {/* Project Images Gallery */}
             <div className="project-images-section">
                 <h2>Project Gallery</h2>
-                <div className="project-images"> 
-                    {project.images.map((image, index) => (
-                        <div className="project-img" key={index}> 
-                            <img src={image} alt={`${project.title} screenshot ${index + 1}`} />
-                        </div>
-                    ))}
+                <div className={`project-images${project.images.length > 3 ? ' is-grid' : ''}`}>
+                    {project.images.map((image, index) => {
+                        const src = typeof image === 'string' ? image : image.src;
+                        const caption = typeof image === 'object' ? image.caption : null;
+                        const description = typeof image === 'object' ? image.description : null;
+                        return (
+                            <div className="project-img-wrapper" key={index}>
+                                <div className="project-img">
+                                    <img src={src} alt={caption || `${project.title} screenshot ${index + 1}`} />
+                                </div>
+                                {(caption || description) && (
+                                    <div className="project-img-caption">
+                                        {caption && <h4>{caption}</h4>}
+                                        {description && <p>{description}</p>}
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
 

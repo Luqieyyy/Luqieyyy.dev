@@ -24,8 +24,8 @@ export default function Projects(){
             {/* Projects Grid */}
             <div className="projects-grid-container">
                 {projects.map((project, index) => (
-                    <Link 
-                        key={project.id} 
+                    <Link
+                        key={project.id}
                         href={`/projects/${project.slug}`}
                         className="project-grid-card"
                         onMouseEnter={() => setHoveredIndex(index)}
@@ -33,15 +33,19 @@ export default function Projects(){
                     >
                         {/* Project Image */}
                         <div className="project-grid-image">
-                            {project.images && project.images[0] && (
-                                <Image 
-                                    src={project.images[0]} 
-                                    alt={project.title}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    style={{ objectFit: 'cover' }}
-                                />
-                            )}
+                            {project.images && project.images[0] && (() => {
+                                const img = project.images[0];
+                                const src = typeof img === 'string' ? img : img.src;
+                                return (
+                                    <Image
+                                        src={src}
+                                        alt={project.title}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                );
+                            })()}
                             <div className="project-overlay">
                                 <span className="view-project">View Project →</span>
                             </div>
@@ -57,20 +61,24 @@ export default function Projects(){
                                     {project.category}
                                 </span>
                             </div>
-                            
+
                             <h2 className="project-grid-title">{project.title}</h2>
                             <p className="project-grid-description">
-                                {project.description.substring(0, 120)}...
+                                {project.tagline || (() => {
+                                    const d = project.description;
+                                    const cut = d.indexOf('.') + 1;
+                                    return cut > 10 ? d.substring(0, cut) : d.substring(0, 100) + '…';
+                                })()}
                             </p>
 
                             {/* Tech Stack */}
                             {project.tech && project.tech.length > 0 && (
                                 <div className="project-grid-tech">
-                                    {project.tech.slice(0, 4).map((tech, i) => (
+                                    {project.tech.slice(0, 5).map((tech, i) => (
                                         <span key={i} className="tech-badge">{tech}</span>
                                     ))}
-                                    {project.tech.length > 4 && (
-                                        <span className="tech-badge more">+{project.tech.length - 4}</span>
+                                    {project.tech.length > 5 && (
+                                        <span className="tech-badge more">+{project.tech.length - 5}</span>
                                     )}
                                 </div>
                             )}

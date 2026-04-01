@@ -22,7 +22,10 @@ export default function ProjectsPreview() {
                         className="project-card"
                     >
                         <div className="project-card-image">
-                            <img src={project.images[0]} alt={project.title} />
+                            <img
+                                src={typeof project.images[0] === 'string' ? project.images[0] : project.images[0].src}
+                                alt={project.title}
+                            />
                         </div>
                         <div className="project-card-content">
                             <h3>{project.title}</h3>

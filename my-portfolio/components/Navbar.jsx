@@ -25,8 +25,8 @@ export default function Navbar({navClass}){
             {/* Navigation Links */}
             <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
                 <Link href="/projects" className="link" onClick={() => setIsMenuOpen(false)}>Projects</Link>
-                <Link href="/about" className="link" onClick={() => setIsMenuOpen(false)}>About</Link>
-                <Link href="/contact" className="link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+                <Link href="/#about" className="link" onClick={() => setIsMenuOpen(false)}>About</Link>
+                <Link href="/#contact" className="link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
             </div>
         </div>
     </nav>

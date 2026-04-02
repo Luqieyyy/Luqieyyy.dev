@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 export default function AboutIntro() {
     return (
-        <section className="about-intro">
+        <section id="about" className="about-intro">
             <div className="about-intro-inner">
 
                 {/* Left — Text */}

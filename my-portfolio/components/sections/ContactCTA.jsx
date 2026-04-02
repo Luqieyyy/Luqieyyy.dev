@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 export default function ContactCTA() {
     return (
-        <section className="contact-cta">
+        <section id="contact" className="contact-cta">
             <h2 className="contact-cta-title">Keep In Touch.</h2>
             <p className="contact-cta-sub">
                 I'm currently open for freelance projects & collaborations.<br />

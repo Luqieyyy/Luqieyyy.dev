@@ -1438,7 +1438,7 @@ img{
 /* ===== SKILLS SECTION ===== */
 
 .skills-section {
-    padding: 8rem 2rem;
+    padding: 5rem 2rem;
     background-color: rgb(22, 12, 12);
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
@@ -1451,8 +1451,8 @@ img{
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1100px;
+    gap: 1.25rem;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -1469,10 +1469,10 @@ img{
 }
 
 .skill-card {
-    padding: 3rem;
+    padding: 1.75rem 1.5rem;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1.5rem;
+    border-radius: 1.25rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(12px);
     transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
@@ -1485,15 +1485,15 @@ img{
 }
 
 .skill-icon-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .skill-image {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -1503,21 +1503,16 @@ img{
 }
 
 .skill-icon {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
 }
 
 .skill-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: antiquewhite;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     font-weight: 600;
-}
-
-.skill-card p {
-    font-size: 1rem;
-    color: rgba(250, 235, 215, 0.65);
-    line-height: 1.7;
+    text-align: center;
 }
 
 /* ===== CONTACT CTA SECTION ===== */
@@ -2018,47 +2013,52 @@ img{
 
     /* Horizontal Scroll Mobile */
     .horizontal-scroll-container {
-        height: auto;
-        overflow-x: auto;
-        overflow-y: hidden;
+        height: 100vh;
+        overflow: hidden;
     }
 
     .horizontal-scroll-content {
-        gap: 2rem;
-        padding: 2rem 1rem;
+        display: flex;
         flex-wrap: nowrap;
+        gap: 1.25rem;
+        padding: 1.5rem 1rem;
+        height: 100%;
+        align-items: center;
     }
-    
+
     .roadmap-item {
-        min-width: 320px;
-        max-width: 340px;
-        padding: 2rem;
+        min-width: 78vw;
+        max-width: 82vw;
+        padding: 1.25rem;
+        flex-shrink: 0;
     }
 
     .roadmap-image {
-        height: 180px;
+        height: 140px;
     }
 
     .roadmap-icon {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .roadmap-title {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .roadmap-desc {
-        font-size: 0.9rem;
+        font-size: 0.82rem;
     }
-    
+
     .roadmap-intro,
     .roadmap-end {
-        min-width: 80vw;
+        min-width: 70vw;
+        max-width: 75vw;
+        flex-shrink: 0;
     }
 
     .roadmap-intro h2,
     .roadmap-end h2 {
-        font-size: clamp(1.8rem, 8vw, 3rem);
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
     }
 
     .roadmap-line {
@@ -2068,12 +2068,12 @@ img{
     
     /* Skills Section Mobile */
     .skills-section {
-        padding: 4rem 1.5rem;
+        padding: 3rem 1rem;
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 
     .skill-card:nth-child(4),
@@ -2083,21 +2083,29 @@ img{
         width: 100%;
     }
 
+    /* 5th card center on 2-col mobile */
+    .skill-card:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 0.5rem);
+        margin: 0 auto;
+        width: 100%;
+    }
+
     .skill-card {
-        padding: 2rem;
+        padding: 1.25rem 1rem;
     }
 
     .skill-image {
-        width: 60px;
-        height: 60px;
+        width: 44px;
+        height: 44px;
     }
 
     .skill-icon {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .skill-card h3 {
-        font-size: 1.3rem;
+        font-size: 0.95rem;
     }
 
     /* Projects Preview Mobile */

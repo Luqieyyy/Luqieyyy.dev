@@ -90,12 +90,12 @@ export function setupAboutIntroAnimation() {
 export function setupHorizontalScroll() {
     const horizontalSection = document.querySelector('.horizontal-scroll-container');
     const horizontalContent = document.querySelector('.horizontal-scroll-content');
-    
+
     if (horizontalSection && horizontalContent) {
         const scrollWidth = horizontalContent.scrollWidth - window.innerWidth;
         
         // Main horizontal scroll animation
-        gsap.to(horizontalContent, {
+        const mainTween = gsap.to(horizontalContent, {
             x: -scrollWidth,
             ease: 'none',
             scrollTrigger: {
@@ -108,7 +108,7 @@ export function setupHorizontalScroll() {
             }
         });
 
-        // Animate each roadmap item
+        // Animate each roadmap item — reuse mainTween, jangan buat tween baru
         gsap.utils.toArray('.roadmap-item').forEach((item) => {
             gsap.from(item, {
                 opacity: 0,
@@ -117,7 +117,7 @@ export function setupHorizontalScroll() {
                 duration: 0.5,
                 scrollTrigger: {
                     trigger: item,
-                    containerAnimation: gsap.to(horizontalContent, { x: -scrollWidth }),
+                    containerAnimation: mainTween,
                     start: 'left 80%',
                     toggleActions: 'play none none reverse',
                 }

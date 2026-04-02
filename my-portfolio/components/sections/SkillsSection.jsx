@@ -22,11 +22,11 @@ export default function SkillsSection() {
                         <div key={index} className="skill-card">
                             <div className="skill-icon-container">
                                 {skill.image ? (
-                                    <Image 
-                                        src={skill.image} 
+                                    <Image
+                                        src={skill.image}
                                         alt={skill.title}
-                                        width={80}
-                                        height={80}
+                                        width={90}
+                                        height={90}
                                         className="skill-image"
                                         style={{ objectFit: 'contain' }}
                                     />
@@ -35,7 +35,6 @@ export default function SkillsSection() {
                                 )}
                             </div>
                             <h3>{skill.title}</h3>
-                            <p>{skill.description}</p>
                         </div>
                     );
                 })}
